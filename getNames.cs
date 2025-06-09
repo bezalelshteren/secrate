@@ -8,11 +8,18 @@ namespace secrate
 {
     public class DHLsecrate
     {
-        public void GetPersonByName()//לפי השם
+        public string[] enterReport()
+        {
+            Console.WriteLine("Enter your name and the name of the target and report separated by a semicolon");
+            string[] allInfo = Console.ReadLine().Split(';');
+            return allInfo;
+        }
+        public void GetPersonByName(string name, connactionToSql connactionToSql)//לפי השם
         {
             try
             {
-                
+                string query = "SELECT * FROM people WHERE  concat(firstName,' ', lastName = @name";
+                connactionToSql.checktheSql(query, new[] { "@name", name });
             }
             catch (Exception ex) { Console.WriteLine(ex.Message, ex.GetType()); }
 

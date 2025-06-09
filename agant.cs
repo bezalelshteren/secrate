@@ -16,6 +16,8 @@ namespace secrate
         public int numReports { get; }
         public int numMentions { get; }
 
+        public agant() { }
+
         public agant(string firstName,string lastName,string secretCode ,string type, int numReports,int numMentions)
         {
             this.firstName = firstName;

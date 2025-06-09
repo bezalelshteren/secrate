@@ -10,6 +10,7 @@ namespace secrate
     {
         static void Main(string[] args)
         {
+            connactionToSql connactionToSql = new connactionToSql();
         }
     }
 }
