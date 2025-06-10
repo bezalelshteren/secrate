@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,14 +15,20 @@ namespace secrate
             string[] allInfo = Console.ReadLine().Split(';');
             return allInfo;
         }
-        public void GetPersonByName(string name, connactionToSql connactionToSql)//לפי השם
+        public void GetPersonByName(string name, enterANewPerson enterANewPerson)//לפי השם
         {
+            List<agant> tr = new List<agant>();
             try
             {
-                string query = "SELECT * FROM people WHERE  concat(firstName,' ', lastName = @name";
-                connactionToSql.checktheSql(query, new[] { "@name", name });
+                string query = "SELECT * FROM people WHERE  concat(firstName ,' ', lastName) = @name";
+                tr = enterANewPerson.GetParemeterFromSql(query, new[] { "@name", name });
+                
             }
             catch (Exception ex) { Console.WriteLine(ex.Message, ex.GetType()); }
+            foreach(agant t in tr)
+            {
+                Console.WriteLine(t);
+            }
 
         }
         public void GetPersonBySecretCode() //

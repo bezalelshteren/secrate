@@ -11,6 +11,20 @@ namespace secrate
         static void Main(string[] args)
         {
             connactionToSql connactionToSql = new connactionToSql();
+            agant agant = new agant()
+            {
+                firstName = "firstName",
+                lastName = "lastName",
+                secretCode = "secretCode",
+                type = "type",
+                numReports = 5,
+                numMentions = 8,
+            };
+            DHLsecrate secrate = new DHLsecrate();
+            enterANewPerson enterANewPerson = new enterANewPerson();
+            Console.WriteLine("byhb");
+            string o =  Console.ReadLine();
+             secrate.GetPersonByName(o, enterANewPerson);
         }
     }
 }

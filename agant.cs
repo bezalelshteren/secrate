@@ -8,17 +8,17 @@ namespace secrate
 {
     public class agant
     {
-        public int id { get; }
-        public string firstName { get; }
-        public string lastName { get; }
-        public string secretCode { get; }
-        public string type { get; }
-        public int numReports { get; }
-        public int numMentions { get; }
+        public int id { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string secretCode { get; set; }
+        public string type { get; set; }
+        public int numReports { get; set; }
+        public int numMentions { get; set; }
 
         public agant() { }
 
-        public agant(string firstName,string lastName,string secretCode ,string type, int numReports,int numMentions)
+        public agant(string firstName, string lastName, string secretCode, string type, int numReports, int numMentions)
         {
             this.firstName = firstName;
             this.lastName = lastName;

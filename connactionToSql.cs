@@ -12,8 +12,9 @@ namespace secrate
         public string query  { get; set; }
         public string strintConn = "server=localhost;username=root;password=;database=murder;";
 
-        public void checktheSql(string query, string[] parameter)
+        public bool ChecktheSql(string query, string[] parameter)
         {
+            bool isExist = false;
             MySqlConnection sqlConnection = new MySqlConnection(strintConn);
             this.query = query;
             try
@@ -27,10 +28,13 @@ namespace secrate
                     agant agant = new agant();
                 }
             }
-            
-            catch(Exception ex) { Console.WriteLine(ex.Message,ex.GetType());
-            sqlConnection.Close();
+
+            catch (Exception ex) { Console.WriteLine(ex.Message, ex.GetType());
             }
+            sqlConnection.Close();
+                return isExist;
+            
         }
+        
     }
 }
